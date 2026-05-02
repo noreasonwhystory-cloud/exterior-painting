@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>外壁塗装 概算見積もり</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="card">
+    <h1>外壁塗装<br>概算見積もり</h1>
+    <p class="lead">延床面積とお名前を入力 → LINEで見積もり受け取り</p>
+
+    <form id="form">
+      <label>
+        <span>延床面積（坪）</span>
+        <select name="tsubo" required>
+          <option value="">選択してください</option>
+          <option value="25">25坪</option>
+          <option value="30">30坪</option>
+          <option value="35">35坪</option>
+          <option value="40">40坪</option>
+          <option value="45">45坪</option>
+          <option value="50">50坪</option>
+          <option value="55">55坪</option>
+          <option value="60">60坪</option>
+        </select>
+      </label>
+
+      <label>
+        <span>お名前</span>
+        <input type="text" name="name" required maxlength="30" placeholder="山田 太郎" />
+      </label>
+
+      <button type="submit" class="btn-line">LINEで見積もり受け取る</button>
+    </form>
+
+    <p class="note">※ 結果はLINEトークに送信。LINE友達追加が必要。</p>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

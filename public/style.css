@@ -1,0 +1,91 @@
+:root {
+  --line: #06c755;
+  --line-dark: #05a648;
+  --bg: #f4f6f8;
+  --text: #222;
+  --muted: #777;
+  --border: #ddd;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px 24px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+
+h1 {
+  font-size: 22px;
+  margin: 0 0 12px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.lead {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0 0 24px;
+  text-align: center;
+}
+
+form label {
+  display: block;
+  margin-bottom: 18px;
+}
+
+form label span {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+select, input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 16px;
+  background: #fff;
+}
+
+.btn-line {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  background: var(--line);
+  color: #fff;
+  border: 0;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.btn-line:hover { background: var(--line-dark); }
+
+.note {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 16px 0 0;
+  text-align: center;
+}

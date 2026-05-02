@@ -1,0 +1,9 @@
+{
+  "tsuboToM2": 3.3,
+  "wallRatio": 1.3,
+  "table": [
+    { "tsubo": 30, "silicon": 700000, "fluorine": 1100000 },
+    { "tsubo": 35, "silicon": 800000, "fluorine": 1200000 },
+    { "tsubo": 40, "silicon": 900000, "fluorine": 1400000 }
+  ]
+}
