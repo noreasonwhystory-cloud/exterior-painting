@@ -1,4 +1,4 @@
 window.APP_CONFIG = {
-  LINE_LOGIN_CHANNEL_ID: 'REPLACE_WITH_LINE_LOGIN_CHANNEL_ID',
-  API_BASE_URL: 'https://REPLACE_WITH_VERCEL_DEPLOY.vercel.app',
+  LINE_LOGIN_CHANNEL_ID: '2009956505',
+  API_BASE_URL: 'https://exterior-painting.vercel.app',
 };
