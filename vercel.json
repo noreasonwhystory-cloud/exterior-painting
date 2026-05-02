@@ -4,6 +4,5 @@
     "api/*.js": {
       "runtime": "nodejs20.x"
     }
-  },
-  "ignoreCommand": "exit 0"
+  }
 }
