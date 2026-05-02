@@ -18,7 +18,6 @@ export default async function handler(req, res) {
     LINE_LOGIN_CHANNEL_SECRET,
     MESSAGING_CHANNEL_ACCESS_TOKEN,
     FRONTEND_URL,
-    VERCEL_URL,
   } = process.env;
 
   const frontend = FRONTEND_URL || '/';
@@ -38,7 +37,7 @@ export default async function handler(req, res) {
       return redirect(res, `${frontend}/done.html?status=invalid`);
     }
 
-    const redirectUri = `https://${VERCEL_URL || req.headers.host}/api/callback`;
+    const redirectUri = `https://${req.headers.host}/api/callback`;
     const tokenRes = await exchangeToken({
       code,
       redirectUri,
