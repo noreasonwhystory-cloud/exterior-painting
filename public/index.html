@@ -3,39 +3,75 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>外壁塗装 概算見積もり</title>
+  <title>外壁塗装 無料診断</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="card">
-    <h1>外壁塗装<br>概算見積もり</h1>
-    <p class="lead">延床面積とお名前を入力 → LINEで見積もり受け取り</p>
+  <main class="wizard">
+    <header class="progress">
+      <div class="progress-bar"><div id="progress-fill" class="progress-fill"></div></div>
+      <div class="progress-label"><span id="progress-current">1</span> / <span id="progress-total">7</span></div>
+    </header>
 
-    <form id="form">
-      <label>
-        <span>延床面積（坪）</span>
-        <select name="tsubo" required>
-          <option value="">選択してください</option>
-          <option value="25">25坪</option>
-          <option value="30">30坪</option>
-          <option value="35">35坪</option>
-          <option value="40">40坪</option>
-          <option value="45">45坪</option>
-          <option value="50">50坪</option>
-          <option value="55">55坪</option>
-          <option value="60">60坪</option>
-        </select>
-      </label>
+    <section class="step" data-step="tsubo">
+      <h2>延床面積を選んでください</h2>
+      <p class="hint">おおよその大きさで構いません。</p>
+      <div class="grid grid-tsubo" id="tsubo-grid">
+        <button class="card card-tsubo" data-value="25" type="button">25坪</button>
+        <button class="card card-tsubo" data-value="30" type="button">30坪</button>
+        <button class="card card-tsubo" data-value="35" type="button">35坪</button>
+        <button class="card card-tsubo" data-value="40" type="button">40坪</button>
+        <button class="card card-tsubo" data-value="45" type="button">45坪</button>
+        <button class="card card-tsubo" data-value="50" type="button">50坪</button>
+        <button class="card card-tsubo" data-value="55" type="button">55坪</button>
+        <button class="card card-tsubo" data-value="60" type="button">60坪</button>
+      </div>
+    </section>
 
-      <label>
+    <section class="step" data-step="chalking">
+      <h2>チョーキング (白い粉)</h2>
+      <p class="hint">壁を手で触って白い粉が付きますか?</p>
+      <div class="grid grid-cards" data-key="chalking"></div>
+    </section>
+
+    <section class="step" data-step="crack">
+      <h2>ひび割れ</h2>
+      <p class="hint">外壁にひび割れはありますか?</p>
+      <div class="grid grid-cards" data-key="crack"></div>
+    </section>
+
+    <section class="step" data-step="caulking">
+      <h2>コーキング劣化</h2>
+      <p class="hint">サイディングのつなぎ目のゴム部分の状態は?</p>
+      <div class="grid grid-cards" data-key="caulking"></div>
+    </section>
+
+    <section class="step" data-step="peeling">
+      <h2>剥がれ</h2>
+      <p class="hint">塗装の剥がれや浮きはありますか?</p>
+      <div class="grid grid-cards" data-key="peeling"></div>
+    </section>
+
+    <section class="step" data-step="leak">
+      <h2>雨漏り</h2>
+      <p class="hint">天井や壁にシミ/雨漏りはありますか?</p>
+      <div class="grid grid-cards" data-key="leak"></div>
+    </section>
+
+    <section class="step" data-step="name">
+      <h2>お名前を入力</h2>
+      <p class="hint">診断結果をLINEでお届けします。</p>
+      <label class="field">
         <span>お名前</span>
-        <input type="text" name="name" required maxlength="30" placeholder="山田 太郎" />
+        <input type="text" id="name-input" maxlength="30" placeholder="山田 太郎" autocomplete="name" />
       </label>
+      <button id="submit-btn" class="btn-line" type="button" disabled>LINEで見積もり受け取る</button>
+      <p class="note">※ LINE友達追加が必要。</p>
+    </section>
 
-      <button type="submit" class="btn-line">LINEで見積もり受け取る</button>
-    </form>
-
-    <p class="note">※ 結果はLINEトークに送信。LINE友達追加が必要。</p>
+    <footer class="nav">
+      <button id="back-btn" class="btn-back" type="button" hidden>← 戻る</button>
+    </footer>
   </main>
 
   <script src="config.js"></script>

@@ -7,11 +7,13 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="card">
+  <main class="card-page">
     <div id="ok" hidden>
       <h1>見積もり送信完了</h1>
       <p>LINEトークを確認してください。</p>
-      <a class="btn-line" href="line://">LINEを開く</a>
+      <a class="btn-line" id="line-open" href="line://">LINEを開く</a>
+      <a class="btn-secondary" id="line-chat" href="line://">現地調査の希望日を送る</a>
+      <p class="note">※ 詳細な見積もりには現地調査が必要です。<br>トークに希望日時を返信してください。</p>
     </div>
 
     <div id="cancelled" hidden>
@@ -33,10 +35,18 @@
     </div>
   </main>
 
+  <script src="config.js"></script>
   <script>
-    const status = new URLSearchParams(location.search).get('status') || 'ok';
-    const target = document.getElementById(status) || document.getElementById('error');
-    target.hidden = false;
+    (() => {
+      const status = new URLSearchParams(location.search).get('status') || 'ok';
+      const target = document.getElementById(status) || document.getElementById('error');
+      target.hidden = false;
+      const oaUrl = (window.APP_CONFIG && window.APP_CONFIG.LINE_OA_URL) || 'line://';
+      const a = document.getElementById('line-chat');
+      const b = document.getElementById('line-open');
+      if (a) a.href = oaUrl;
+      if (b) b.href = oaUrl;
+    })();
   </script>
 </body>
 </html>

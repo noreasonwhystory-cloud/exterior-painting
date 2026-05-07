@@ -32,7 +32,7 @@ export default async function handler(req, res) {
       return redirect(res, `${frontend}/done.html?status=invalid`);
     }
 
-    const { name, tsubo } = decodeState(state);
+    const { name, tsubo, det } = decodeState(state);
     if (!name || !tsubo) {
       return redirect(res, `${frontend}/done.html?status=invalid`);
     }
@@ -46,7 +46,7 @@ export default async function handler(req, res) {
     });
     const userId = decodeIdTokenUserId(tokenRes.id_token);
 
-    const quote = calc(Number(tsubo));
+    const quote = calc(Number(tsubo), det || {});
     const messages = formatQuote({ name, ...quote });
 
     await pushMessage({

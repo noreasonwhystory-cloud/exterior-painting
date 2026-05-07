@@ -1,9 +1,37 @@
 {
   "tsuboToM2": 3.3,
   "wallRatio": 1.3,
+  "priceRangeRatio": 0.1,
   "table": [
     { "tsubo": 30, "silicon": 700000, "fluorine": 1100000 },
     { "tsubo": 35, "silicon": 800000, "fluorine": 1200000 },
     { "tsubo": 40, "silicon": 900000, "fluorine": 1400000 }
-  ]
+  ],
+  "deterioration": {
+    "chalking": { "safe": 0, "mild": 0, "medium": 0, "severe": 0 },
+    "crack": { "safe": 0, "mild": 30000, "medium": 80000, "severe": 150000 },
+    "caulking": { "safe": 0, "mild": 50000, "medium": 100000, "severe": 150000 },
+    "peeling": { "safe": 0, "mild": 50000, "medium": 100000, "severe": 180000 },
+    "leak": { "safe": 0, "mild": 50000, "medium": 150000, "severe": 300000 }
+  },
+  "riskMessage": {
+    "low": "現状 健全。予防塗装でコスト最小化可能。",
+    "mid": "劣化進行中。3年後 補修費が現在の1.4倍以上に膨らむリスク。",
+    "high": "劣化深刻。雨漏り/構造ダメージのリスク高。早期対応推奨。"
+  },
+  "labels": {
+    "items": {
+      "chalking": "チョーキング",
+      "crack": "ひび割れ",
+      "caulking": "コーキング劣化",
+      "peeling": "剥がれ",
+      "leak": "雨漏り"
+    },
+    "levels": {
+      "safe": "セーフ",
+      "mild": "軽微",
+      "medium": "中度",
+      "severe": "重度"
+    }
+  }
 }
