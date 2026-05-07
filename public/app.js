@@ -5,10 +5,10 @@
   const DET_KEYS = ['chalking', 'crack', 'caulking', 'peeling', 'leak'];
 
   const LEVELS = [
-    { value: 'safe',   icon: '🟢', label: 'セーフ',   desc: '症状なし' },
-    { value: 'mild',   icon: '🟡', label: '軽微',     desc: 'ところどころ' },
-    { value: 'medium', icon: '🟠', label: '中度',     desc: '目立つ劣化' },
-    { value: 'severe', icon: '🔴', label: '重度',     desc: '広範囲・深刻' },
+    { value: 'safe',   label: 'セーフ', desc: '症状なし' },
+    { value: 'mild',   label: '軽微',   desc: 'ところどころ' },
+    { value: 'medium', label: '中度',   desc: '目立つ劣化' },
+    { value: 'severe', label: '重度',   desc: '広範囲・深刻' },
   ];
 
   const state = {
@@ -28,7 +28,7 @@
       btn.dataset.value = lv.value;
       btn.dataset.level = lv.value;
       btn.innerHTML =
-        `<div class="icon">${lv.icon}</div>` +
+        `<div class="img" style="background-image:url('img/deterioration/${key}_${lv.value}.png')"></div>` +
         `<div class="level">${lv.label}</div>` +
         `<div class="desc">${lv.desc}</div>`;
       btn.addEventListener('click', () => selectDet(key, lv.value));
